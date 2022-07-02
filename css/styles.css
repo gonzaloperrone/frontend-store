@@ -1,0 +1,273 @@
+:root {
+    --primary: #9C27B0;
+    --darkPrimary: #89119D;
+    --secundary: #FFCE00;
+    --darkSecundary: rgb(233, 187, 2);
+    --white: #FFF;
+    --black: #000;
+
+    --principalFont: 'Staatliches', cursive;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/*Globals*/
+body {
+    background-color: var(--primary);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+p {
+    font-size: 1.8rem;
+    font-family: ASrial, Helvetica, sans-serif;
+    color: var(--white);
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+    color: var(--secundary);
+    font-family: var(--principalFont);
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+/*Header*/
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo {
+    margin: 3rem 0;
+}
+
+/*Footer*/
+.footer {
+    background-color: var(--darkPrimary);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer_text {
+    text-align: center;
+    font-family: var(--principalFont);
+    font-size: 2.2rem;
+}
+
+/*Nav*/
+.nav {
+    background-color: var(--darkPrimary);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav__link {
+    font-family: var(--principalFont);
+    color: var(--white);
+    font-size: 3rem;
+}
+
+.nav__link--active,
+.nav__link:hover {
+    color: var(--secundary);
+}
+
+/*Grid*/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/*Products*/
+.product {
+    background-color: var(--darkPrimary);
+    padding: 1rem;
+}
+
+.product__name {
+    font-size: 4rem;
+}
+
+.product__price {
+    font-size: 2.8rem;
+    color: var(--secundary);
+}
+
+.product__name,
+.product__price {
+    font-family: var(--principalFont);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/*Graphics*/
+.graphics {
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.graphics--shirts {
+    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+    background-image: url(../img/grafico1.jpg);
+}
+
+.graphics--node {
+    grid-row: 8 / 9;
+    grid-column: 1 / 3;
+    background-image: url(../img/grafico2.jpg);
+}
+
+@media (min-width: 768px) {
+    .graphics--node {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+
+/*About Us*/
+.aboutUs {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    padding: 1rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .aboutUs {
+        grid-template-columns: repeat(repeat(2, 1fr));
+        column-gap: 2rem;
+    }
+}
+
+.aboutUs__img {
+    grid-row: 1 / 2;
+}
+
+@media (min-width: 768px) {
+    .aboutUs__img {
+        grid-column: 2 / 3;
+    }
+}
+
+/*Blocks*/
+.blocks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .blocks {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+}
+
+.block {
+    text-align: center;
+    padding: 1rem;
+}
+
+.block__title {
+    margin: 0;
+}
+
+/*Product*/
+@media (min-width: 768px) {
+    .shirt {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+        align-items: center;
+    }
+
+    .shirt__img {
+        width: 80%;
+        border-radius: 10px
+    }
+}
+
+.shirt{
+    padding: 1rem;
+}
+
+.form {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    justify-content: center;
+}
+
+.form__camp {
+    border: .3rem solid var(--darkPrimary);
+    background-color: transparent;
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    appearance: none;
+    width: 17rem;
+}
+
+.form__submit {
+    background-color: var(--secundary);
+    border: none;
+    font-size: 1.5rem;
+    font-family: var(--principalFont);
+    padding: 1rem;
+    transition: background-color .3s ease;
+    grid-column: 2 / 3;
+    width: 15rem;
+}
+
+.form__submit:hover {
+    cursor: pointer;
+    background-color: var(--darkSecundary)
+}
